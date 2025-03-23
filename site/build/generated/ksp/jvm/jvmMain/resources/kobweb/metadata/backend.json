@@ -1,0 +1,1 @@
+{"initMethods":[{"fqn":"com.example.blogmultiplateform.data.initMongoDB"}],"apiMethods":[{"fqn":"com.example.blogmultiplateform.api.userCheck","route":"/userCheck"},{"fqn":"com.example.blogmultiplateform.api.checkUserId","route":"/checkUserId"}],"apiStreamMethods":[]}

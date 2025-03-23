@@ -1,0 +1,1 @@
+{"src/jsMain/kotlin/com/example/blogmultiplateform/worker/EchoWorkerFactory.kt":["<init>:com.example.blogmultiplateform.worker.EchoWorkerFactory","EchoWorkerFactory:com.example.blogmultiplateform.worker","createIOSerializer:com.example.blogmultiplateform.worker.EchoWorkerFactory","createStrategy:com.example.blogmultiplateform.worker.EchoWorkerFactory"]}

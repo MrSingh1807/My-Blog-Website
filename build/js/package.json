@@ -1,0 +1,19 @@
+{
+  "name": "BlogMultiplateform",
+  "version": "unspecified",
+  "private": true,
+  "workspaces": [
+    "packages/blogmultiplateform",
+    "packages/blogmultiplateform-test",
+    "packages/worker-411f",
+    "packages/worker-411f-test",
+    "packages_imported/html-core-js/1.7.1",
+    "packages_imported/kotlin-test-js-runner/0.0.2"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "resolutions": {}
+}

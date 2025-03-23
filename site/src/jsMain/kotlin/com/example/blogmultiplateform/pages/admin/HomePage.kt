@@ -4,11 +4,13 @@ import androidx.compose.runtime.Composable
 import com.example.blogmultiplateform.components.SidePanel
 import com.example.blogmultiplateform.utils.Constants.PAGE_WIDTH
 import com.example.blogmultiplateform.utils.FONT_FAMILY
+import com.example.blogmultiplateform.utils.isUserLoggedIn
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.background
 import com.varabyte.kobweb.compose.ui.modifiers.color
@@ -29,20 +31,21 @@ import org.jetbrains.compose.web.css.px
 @Page(routeOverride = "home")
 @Composable
 fun HomeScreen() {
-//    isUserLoggedIn {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-
-        Column(
+    isUserLoggedIn {
+        Box(
             modifier = Modifier.fillMaxSize()
-                .maxWidth(PAGE_WIDTH.px)
+                .background(color = Color.rgb(155, 155, 155)),
+            contentAlignment = Alignment.Center
         ) {
-            SidePanel()
-        }
 
+            Column(
+                modifier = Modifier.fillMaxSize()
+                    .maxWidth(PAGE_WIDTH.px)
+            ) {
+                SidePanel()
+            }
+
+        }
     }
-//    }
 }
 
