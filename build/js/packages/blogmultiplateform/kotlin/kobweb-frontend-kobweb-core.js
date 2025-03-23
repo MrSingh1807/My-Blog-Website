@@ -43,16 +43,16 @@
   var lazy = kotlin_kotlin.$_$.sh;
   var THROW_CCE = kotlin_kotlin.$_$.tg;
   var Annotation = kotlin_kotlin.$_$.dg;
-  var Style = kotlin_org_jetbrains_compose_html_html_core.$_$.u5;
-  var get_px = kotlin_org_jetbrains_compose_html_html_core.$_$.d5;
-  var padding = kotlin_org_jetbrains_compose_html_html_core.$_$.a5;
+  var Style = kotlin_org_jetbrains_compose_html_html_core.$_$.v5;
+  var get_px = kotlin_org_jetbrains_compose_html_html_core.$_$.e5;
+  var padding = kotlin_org_jetbrains_compose_html_html_core.$_$.b5;
   var margin = kotlin_org_jetbrains_compose_html_html_core.$_$.p4;
   var boxSizing = kotlin_org_jetbrains_compose_html_html_core.$_$.p3;
   var StyleSheet = kotlin_org_jetbrains_compose_html_html_core.$_$.f3;
   var StyleSheet_init_$Init$ = kotlin_org_jetbrains_compose_html_html_core.$_$.a;
   var layer = kotlin_com_varabyte_kobweb_compose_html_ext.$_$.h1;
   var initMetadataForObject = kotlin_kotlin.$_$.wb;
-  var updateChangedFlags = kotlin_org_jetbrains_compose_runtime_runtime.$_$.c1;
+  var updateChangedFlags = kotlin_org_jetbrains_compose_runtime_runtime.$_$.e1;
   var throwUninitializedPropertyAccessException = kotlin_kotlin.$_$.ai;
   var toString = kotlin_kotlin.$_$.zc;
   var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.u1;
@@ -63,10 +63,10 @@
   var equals = kotlin_kotlin.$_$.jb;
   var hashCode = kotlin_kotlin.$_$.qb;
   var initMetadataForCompanion = kotlin_kotlin.$_$.sb;
-  var mutableStateOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.w;
-  var sourceInformationMarkerStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.y;
-  var sourceInformationMarkerEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.x;
-  var staticCompositionLocalOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.z;
+  var mutableStateOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.x;
+  var sourceInformationMarkerStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.a1;
+  var sourceInformationMarkerEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.z;
+  var staticCompositionLocalOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.b1;
   var initMetadataForInterface = kotlin_kotlin.$_$.ub;
   var ensureNotNull = kotlin_kotlin.$_$.nh;
   var isBlank = kotlin_kotlin.$_$.me;
@@ -104,7 +104,7 @@
   var Collection = kotlin_kotlin.$_$.f5;
   var isInterface = kotlin_kotlin.$_$.gc;
   var rememberComposableLambda = kotlin_org_jetbrains_compose_runtime_runtime.$_$.c;
-  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.i1;
+  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.k1;
   var RouteTree = kotlin_com_varabyte_kobweb_client_server_internal.$_$.b;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.m;
   var map = kotlin_kotlin.$_$.wd;
@@ -116,8 +116,8 @@
   var charSequenceGet = kotlin_kotlin.$_$.eb;
   var contains_0 = kotlin_kotlin.$_$.be;
   var toMutableMap = kotlin_kotlin.$_$.u9;
-  var Div = kotlin_org_jetbrains_compose_html_html_core.$_$.p5;
-  var Text = kotlin_org_jetbrains_compose_html_html_core.$_$.w5;
+  var Div = kotlin_org_jetbrains_compose_html_html_core.$_$.q5;
+  var Text = kotlin_org_jetbrains_compose_html_html_core.$_$.x5;
   var DisposableEffect = kotlin_org_jetbrains_compose_runtime_runtime.$_$.l;
   var DisposableEffectResult = kotlin_org_jetbrains_compose_runtime_runtime.$_$.i;
   //endregion

@@ -44,10 +44,10 @@
   var charSequenceLength = kotlin_kotlin.$_$.fb;
   var LinkedHashSet_init_$Create$ = kotlin_kotlin.$_$.x;
   var ensureNotNull = kotlin_kotlin.$_$.nh;
-  var traceEventStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.b1;
-  var isTraceInProgress = kotlin_org_jetbrains_compose_runtime_runtime.$_$.u;
+  var traceEventStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.d1;
+  var isTraceInProgress = kotlin_org_jetbrains_compose_runtime_runtime.$_$.v;
   var DisposableEffect = kotlin_org_jetbrains_compose_runtime_runtime.$_$.l;
-  var traceEventEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.a1;
+  var traceEventEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.c1;
   var toString_0 = kotlin_kotlin.$_$.bi;
   var toBoolean = kotlin_kotlin.$_$.if;
   var DisposableEffectResult = kotlin_org_jetbrains_compose_runtime_runtime.$_$.i;
@@ -64,7 +64,7 @@
   var FunctionAdapter = kotlin_kotlin.$_$.wa;
   var ReadOnlyProperty = kotlin_kotlin.$_$.bd;
   var getKClassFromExpression = kotlin_kotlin.$_$.d;
-  var mutableStateListOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.v;
+  var mutableStateListOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.w;
   var toMutableList = kotlin_kotlin.$_$.t9;
   var getBooleanHashCode = kotlin_kotlin.$_$.lb;
   var listOf = kotlin_kotlin.$_$.h8;
@@ -72,31 +72,31 @@
   var listOfNotNull = kotlin_kotlin.$_$.f8;
   var joinToString_0 = kotlin_kotlin.$_$.y7;
   var contains = kotlin_kotlin.$_$.ae;
-  var sourceInformationMarkerStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.y;
-  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.i1;
-  var sourceInformationMarkerEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.x;
-  var _SkippableUpdater___init__impl__4ft0t9 = kotlin_org_jetbrains_compose_runtime_runtime.$_$.d1;
-  var _SkippableUpdater___get_composer__impl__6t7yne = kotlin_org_jetbrains_compose_runtime_runtime.$_$.e1;
-  var _Updater___init__impl__rbfxm8 = kotlin_org_jetbrains_compose_runtime_runtime.$_$.f1;
-  var Updater__set_impl_v7kwss = kotlin_org_jetbrains_compose_runtime_runtime.$_$.g1;
-  var SkippableUpdater = kotlin_org_jetbrains_compose_runtime_runtime.$_$.q;
+  var sourceInformationMarkerStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.a1;
+  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.k1;
+  var sourceInformationMarkerEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.z;
+  var _SkippableUpdater___init__impl__4ft0t9 = kotlin_org_jetbrains_compose_runtime_runtime.$_$.f1;
+  var _SkippableUpdater___get_composer__impl__6t7yne = kotlin_org_jetbrains_compose_runtime_runtime.$_$.g1;
+  var _Updater___init__impl__rbfxm8 = kotlin_org_jetbrains_compose_runtime_runtime.$_$.h1;
+  var Updater__set_impl_v7kwss = kotlin_org_jetbrains_compose_runtime_runtime.$_$.i1;
+  var SkippableUpdater = kotlin_org_jetbrains_compose_runtime_runtime.$_$.r;
   var DomNodeWrapper = kotlin_org_jetbrains_compose_html_internal_html_core_runtime.$_$.c;
   var emptyList = kotlin_kotlin.$_$.j7;
   var copyToArray = kotlin_kotlin.$_$.g7;
-  var updateChangedFlags = kotlin_org_jetbrains_compose_runtime_runtime.$_$.c1;
+  var updateChangedFlags = kotlin_org_jetbrains_compose_runtime_runtime.$_$.e1;
   var DOMScope = kotlin_org_jetbrains_compose_html_internal_html_core_runtime.$_$.a;
   var throwUninitializedPropertyAccessException = kotlin_kotlin.$_$.ai;
-  var SideEffect = kotlin_org_jetbrains_compose_runtime_runtime.$_$.p;
-  var RememberObserver = kotlin_org_jetbrains_compose_runtime_runtime.$_$.o;
+  var SideEffect = kotlin_org_jetbrains_compose_runtime_runtime.$_$.q;
+  var RememberObserver = kotlin_org_jetbrains_compose_runtime_runtime.$_$.p;
   var lazy = kotlin_kotlin.$_$.sh;
-  var invalidApplier = kotlin_org_jetbrains_compose_runtime_runtime.$_$.t;
+  var invalidApplier = kotlin_org_jetbrains_compose_runtime_runtime.$_$.u;
   var DomApplier = kotlin_org_jetbrains_compose_html_internal_html_core_runtime.$_$.b;
-  var mutableStateOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.w;
+  var mutableStateOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.x;
   var composableLambda = kotlin_org_jetbrains_compose_runtime_runtime.$_$.b;
   var DisposableEffect_0 = kotlin_org_jetbrains_compose_runtime_runtime.$_$.k;
   var KProperty1 = kotlin_kotlin.$_$.od;
   var getPropertyCallableRef = kotlin_kotlin.$_$.ob;
-  var compositionLocalOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.r;
+  var compositionLocalOf = kotlin_org_jetbrains_compose_runtime_runtime.$_$.s;
   var mapOf = kotlin_kotlin.$_$.k8;
   //endregion
   //region block: pre-declaration
@@ -6773,14 +6773,17 @@
   function bottom(_this__u8e3s4, value) {
     _this__u8e3s4.property_npxg1h_k$('bottom', value);
   }
-  function opacity(_this__u8e3s4, value) {
-    _this__u8e3s4.property_jk9dw6_k$('opacity', value);
-  }
   function display(_this__u8e3s4, displayStyle) {
     // Inline function 'org.jetbrains.compose.web.css.value' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     _this__u8e3s4.property_wcrait_k$('display', displayStyle);
+  }
+  function opacity(_this__u8e3s4, value) {
+    _this__u8e3s4.property_jk9dw6_k$('opacity', value.value / 100);
+  }
+  function opacity_0(_this__u8e3s4, value) {
+    _this__u8e3s4.property_jk9dw6_k$('opacity', value);
   }
   function lineHeight(_this__u8e3s4, value) {
     _this__u8e3s4.property_wcrait_k$('line-height', value);
@@ -10054,34 +10057,35 @@
   _.$_$.s4 = minHeight;
   _.$_$.t4 = minWidth;
   _.$_$.u4 = get_ms;
-  _.$_$.v4 = opacity;
-  _.$_$.w4 = paddingBottom;
-  _.$_$.x4 = paddingLeft;
-  _.$_$.y4 = paddingRight;
-  _.$_$.z4 = paddingTop;
-  _.$_$.a5 = padding;
-  _.$_$.b5 = get_percent;
-  _.$_$.c5 = position;
-  _.$_$.d5 = get_px;
-  _.$_$.e5 = rgba;
-  _.$_$.f5 = rgb;
-  _.$_$.g5 = right;
-  _.$_$.h5 = rowGap;
-  _.$_$.i5 = style_3;
-  _.$_$.j5 = top;
-  _.$_$.k5 = unaryMinus;
-  _.$_$.l5 = get_vh;
-  _.$_$.m5 = width_0;
-  _.$_$.n5 = width;
-  _.$_$.o5 = Button_1;
-  _.$_$.p5 = Div_0;
-  _.$_$.q5 = ElementBuilder;
-  _.$_$.r5 = Img_0;
-  _.$_$.s5 = Input_0;
-  _.$_$.t5 = Span_0;
-  _.$_$.u5 = Style_1;
-  _.$_$.v5 = TagElement;
-  _.$_$.w5 = Text_1;
+  _.$_$.v4 = opacity_0;
+  _.$_$.w4 = opacity;
+  _.$_$.x4 = paddingBottom;
+  _.$_$.y4 = paddingLeft;
+  _.$_$.z4 = paddingRight;
+  _.$_$.a5 = paddingTop;
+  _.$_$.b5 = padding;
+  _.$_$.c5 = get_percent;
+  _.$_$.d5 = position;
+  _.$_$.e5 = get_px;
+  _.$_$.f5 = rgba;
+  _.$_$.g5 = rgb;
+  _.$_$.h5 = right;
+  _.$_$.i5 = rowGap;
+  _.$_$.j5 = style_3;
+  _.$_$.k5 = top;
+  _.$_$.l5 = unaryMinus;
+  _.$_$.m5 = get_vh;
+  _.$_$.n5 = width_0;
+  _.$_$.o5 = width;
+  _.$_$.p5 = Button_1;
+  _.$_$.q5 = Div_0;
+  _.$_$.r5 = ElementBuilder;
+  _.$_$.s5 = Img_0;
+  _.$_$.t5 = Input_0;
+  _.$_$.u5 = Span_0;
+  _.$_$.v5 = Style_1;
+  _.$_$.w5 = TagElement;
+  _.$_$.x5 = Text_1;
   //endregion
   return _;
 }));

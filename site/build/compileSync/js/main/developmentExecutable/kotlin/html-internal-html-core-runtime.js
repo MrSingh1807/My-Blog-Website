@@ -32,7 +32,7 @@
   var AbstractApplier = kotlin_org_jetbrains_compose_runtime_runtime.$_$.d;
   var clear = kotlin_org_jetbrains_kotlin_kotlin_dom_api_compat.$_$.b;
   var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.v;
-  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.h1;
+  var Companion_getInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.j1;
   var CoroutineImpl = kotlin_kotlin.$_$.qa;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.o;
   var isInterface = kotlin_kotlin.$_$.gc;
@@ -44,14 +44,14 @@
   var SuspendFunction1 = kotlin_kotlin.$_$.ra;
   var CoroutineDispatcher = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.m;
   var get_DefaultMonotonicFrameClock = kotlin_org_jetbrains_compose_runtime_runtime.$_$.h;
-  var Recomposer = kotlin_org_jetbrains_compose_runtime_runtime.$_$.n;
+  var Recomposer = kotlin_org_jetbrains_compose_runtime_runtime.$_$.o;
   var CoroutineStart_UNDISPATCHED_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
   var ControlledComposition = kotlin_org_jetbrains_compose_runtime_runtime.$_$.g;
   var composableLambdaInstance = kotlin_org_jetbrains_compose_runtime_runtime.$_$.a;
   var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.aa;
-  var traceEventStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.b1;
-  var isTraceInProgress = kotlin_org_jetbrains_compose_runtime_runtime.$_$.u;
-  var traceEventEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.a1;
+  var traceEventStart = kotlin_org_jetbrains_compose_runtime_runtime.$_$.d1;
+  var isTraceInProgress = kotlin_org_jetbrains_compose_runtime_runtime.$_$.v;
+  var traceEventEnd = kotlin_org_jetbrains_compose_runtime_runtime.$_$.c1;
   //endregion
   //region block: pre-declaration
   initMetadataForInterface(DOMScope, 'DOMScope');

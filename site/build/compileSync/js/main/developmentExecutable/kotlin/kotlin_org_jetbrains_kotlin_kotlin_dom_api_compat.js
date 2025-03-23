@@ -24,9 +24,12 @@
   var charSequenceLength = kotlin_kotlin.$_$.fb;
   var joinTo = kotlin_kotlin.$_$.z7;
   var ensureNotNull = kotlin_kotlin.$_$.nh;
+  var protoOf = kotlin_kotlin.$_$.vc;
+  var initMetadataForClass = kotlin_kotlin.$_$.rb;
   var VOID = kotlin_kotlin.$_$.g;
   //endregion
   //region block: pre-declaration
+  initMetadataForClass(EventListenerHandler, 'EventListenerHandler');
   //endregion
   function hasClass(_this__u8e3s4, cssClass) {
     // Inline function 'kotlin.text.matches' call
@@ -118,9 +121,49 @@
       _this__u8e3s4.removeChild(ensureNotNull(_this__u8e3s4.firstChild));
     }
   }
+  function EventListener(handler) {
+    return new EventListenerHandler(handler);
+  }
+  function _get_handler__z70553($this) {
+    return $this.handler_1;
+  }
+  function EventListenerHandler(handler) {
+    this.handler_1 = handler;
+  }
+  protoOf(EventListenerHandler).handleEvent_zcjn50_k$ = function (event) {
+    this.handler_1(event);
+  };
+  protoOf(EventListenerHandler).handleEvent = function (event) {
+    return this.handleEvent_zcjn50_k$(event);
+  };
+  protoOf(EventListenerHandler).toString = function () {
+    return 'EventListenerHandler(' + toString(this.handler_1) + ')';
+  };
   function get(_this__u8e3s4, index) {
     // Inline function 'kotlin.js.asDynamic' call
     return _this__u8e3s4[index];
+  }
+  function EventSourceInit(withCredentials) {
+    withCredentials = withCredentials === VOID ? false : withCredentials;
+    var o = {};
+    o['withCredentials'] = withCredentials;
+    return o;
+  }
+  function get_0(_this__u8e3s4, index) {
+    // Inline function 'kotlin.js.asDynamic' call
+    return _this__u8e3s4[index];
+  }
+  function set(_this__u8e3s4, key, value) {
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4[key] = value;
+  }
+  function get_1(_this__u8e3s4, index) {
+    // Inline function 'kotlin.js.asDynamic' call
+    return _this__u8e3s4[index];
+  }
+  function get_2(_this__u8e3s4, key) {
+    // Inline function 'kotlin.js.asDynamic' call
+    return _this__u8e3s4[key];
   }
   function MutationObserverInit(childList, attributes, characterData, subtree, attributeOldValue, characterDataOldValue, attributeFilter) {
     childList = childList === VOID ? false : childList;
@@ -139,28 +182,6 @@
     o['characterDataOldValue'] = characterDataOldValue;
     o['attributeFilter'] = attributeFilter;
     return o;
-  }
-  function get_0(_this__u8e3s4, index) {
-    // Inline function 'kotlin.js.asDynamic' call
-    return _this__u8e3s4[index];
-  }
-  function EventSourceInit(withCredentials) {
-    withCredentials = withCredentials === VOID ? false : withCredentials;
-    var o = {};
-    o['withCredentials'] = withCredentials;
-    return o;
-  }
-  function set(_this__u8e3s4, key, value) {
-    // Inline function 'kotlin.js.asDynamic' call
-    _this__u8e3s4[key] = value;
-  }
-  function get_1(_this__u8e3s4, key) {
-    // Inline function 'kotlin.js.asDynamic' call
-    return _this__u8e3s4[key];
-  }
-  function get_2(_this__u8e3s4, index) {
-    // Inline function 'kotlin.js.asDynamic' call
-    return _this__u8e3s4[index];
   }
   function RequestInit(method, headers, body, referrer, referrerPolicy, mode, credentials, cache, redirect, integrity, keepalive, window_0) {
     method = method === VOID ? undefined : method;
@@ -196,6 +217,7 @@
   _.$_$.b = clear;
   _.$_$.c = hasClass;
   _.$_$.d = removeClass;
+  _.$_$.e = EventListener;
   //endregion
   return _;
 }));

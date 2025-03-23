@@ -100,13 +100,16 @@
   var toString_0 = kotlin_kotlin.$_$.bi;
   var Key = kotlin_kotlin.$_$.oa;
   var Element = kotlin_kotlin.$_$.na;
+  var CoroutineScope_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.o;
+  var CoroutineImpl = kotlin_kotlin.$_$.qa;
+  var returnIfSuspended = kotlin_kotlin.$_$.j;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.aa;
+  var initMetadataForCoroutine = kotlin_kotlin.$_$.tb;
+  var initMetadataForLambda = kotlin_kotlin.$_$.vb;
+  var SuspendFunction1 = kotlin_kotlin.$_$.ra;
   var MutableObjectIntMap = kotlin_org_jetbrains_compose_collection_internal_collection.$_$.e;
   var ScatterSet = kotlin_org_jetbrains_compose_collection_internal_collection.$_$.i;
   var fill_0 = kotlin_kotlin.$_$.o7;
-  var CoroutineImpl = kotlin_kotlin.$_$.qa;
-  var CoroutineScope_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.o;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.aa;
-  var initMetadataForLambda = kotlin_kotlin.$_$.vb;
   var ArrayList_init_$Create$_1 = kotlin_kotlin.$_$.n;
   var removeLast = kotlin_kotlin.$_$.x8;
   var withContext = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.g;
@@ -121,15 +124,12 @@
   var get_job = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.u;
   var cancelAndJoin = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
   var coroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.e;
-  var initMetadataForCoroutine = kotlin_kotlin.$_$.tb;
-  var returnIfSuspended = kotlin_kotlin.$_$.j;
   var first = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
   var LinkedHashMap_init_$Create$ = kotlin_kotlin.$_$.v;
   var takeWhile = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.j;
   var collect = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
   var Continuation = kotlin_kotlin.$_$.ja;
   var removeFirst = kotlin_kotlin.$_$.w8;
-  var SuspendFunction1 = kotlin_kotlin.$_$.ra;
   var SuspendFunction2 = kotlin_kotlin.$_$.sa;
   var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.j2;
   var indexOf_0 = kotlin_kotlin.$_$.ke;
@@ -365,6 +365,11 @@
   initMetadataForClass(NonRestartableComposable, 'NonRestartableComposable', VOID, VOID, [Annotation]);
   initMetadataForClass(NonSkippableComposable, 'NonSkippableComposable', VOID, VOID, [Annotation]);
   initMetadataForClass(OpaqueKey, 'OpaqueKey');
+  initMetadataForInterface(MutableState, 'MutableState', VOID, VOID, [State_0]);
+  initMetadataForInterface(ProduceStateScope, 'ProduceStateScope', VOID, VOID, [MutableState, CoroutineScope_0], [1]);
+  initMetadataForCoroutine($awaitDisposeCOROUTINE$0, CoroutineImpl);
+  initMetadataForClass(ProduceStateScopeImpl, 'ProduceStateScopeImpl', VOID, VOID, [ProduceStateScope, MutableState], [1]);
+  initMetadataForLambda(produceState$slambda, CoroutineImpl, [CoroutineImpl], [1]);
   initMetadataForClass(ReadOnlyComposable, 'ReadOnlyComposable', VOID, VOID, [Annotation]);
   initMetadataForCompanion(Companion_2);
   initMetadataForClass(RecomposeScopeImpl$observe$1, VOID, VOID, VOID, [CompositionObserverHandle]);
@@ -432,7 +437,6 @@
   initMetadataForInterface(SnapshotMutationPolicy, 'SnapshotMutationPolicy');
   initMetadataForObject(StructuralEqualityPolicy, 'StructuralEqualityPolicy', VOID, VOID, [SnapshotMutationPolicy]);
   initMetadataForObject(ReferentialEqualityPolicy, 'ReferentialEqualityPolicy', VOID, VOID, [SnapshotMutationPolicy]);
-  initMetadataForInterface(MutableState, 'MutableState', VOID, VOID, [State_0]);
   initMetadataForClass(StateRecord, 'StateRecord');
   initMetadataForClass(StateStateRecord, 'StateStateRecord', VOID, StateRecord);
   function mergeRecords(previous, current, applied) {
@@ -9066,6 +9070,199 @@
   }
   function throwIllegalArgumentException(message) {
     throw IllegalArgumentException_init_$Create$(message);
+  }
+  function ProduceStateScope() {
+  }
+  function produceState(initialValue, producer, $composer, $changed) {
+    var $composer_0 = $composer;
+    sourceInformationMarkerStart($composer_0, 10454275, 'C(produceState)80@2911L41,81@2978L74,81@2957L95:ProduceState.kt#9igjgp');
+    if (isTraceInProgress()) {
+      traceEventStart(10454275, $changed, -1, 'androidx.compose.runtime.produceState (ProduceState.kt:79)');
+    }
+    sourceInformationMarkerStart($composer_0, 2143000241, 'CC(remember):ProduceState.kt#9igjgp');
+    // Inline function 'androidx.compose.runtime.cache' call
+    // Inline function 'kotlin.let' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
+    var it = $composer_0.rememberedValue_4dg93v_k$();
+    var tmp;
+    if (false || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
+      // Inline function 'androidx.compose.runtime.produceState.<anonymous>' call
+      var value = mutableStateOf(initialValue);
+      $composer_0.updateRememberedValue_l1wh71_k$(value);
+      tmp = value;
+    } else {
+      tmp = it;
+    }
+    var tmp_0 = tmp;
+    var tmp1_group = (tmp_0 == null ? true : !(tmp_0 == null)) ? tmp_0 : THROW_CCE();
+    sourceInformationMarkerEnd($composer_0);
+    var result = tmp1_group;
+    sourceInformationMarkerStart($composer_0, 2143002418, 'CC(remember):ProduceState.kt#9igjgp');
+    // Inline function 'androidx.compose.runtime.cache' call
+    var invalid = $composer_0.changedInstance_s1wkiy_k$(producer);
+    // Inline function 'kotlin.let' call
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
+    var it_0 = $composer_0.rememberedValue_4dg93v_k$();
+    var tmp_1;
+    if (invalid || it_0 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
+      // Inline function 'androidx.compose.runtime.produceState.<anonymous>' call
+      var value_0 = produceState$slambda_0(producer, result, null);
+      $composer_0.updateRememberedValue_l1wh71_k$(value_0);
+      tmp_1 = value_0;
+    } else {
+      tmp_1 = it_0;
+    }
+    var tmp_2 = tmp_1;
+    var tmp2_group = (tmp_2 == null ? true : !(tmp_2 == null)) ? tmp_2 : THROW_CCE();
+    sourceInformationMarkerEnd($composer_0);
+    LaunchedEffect(Unit_getInstance(), tmp2_group, $composer_0, 6);
+    if (isTraceInProgress()) {
+      traceEventEnd();
+    }
+    sourceInformationMarkerEnd($composer_0);
+    return result;
+  }
+  function $awaitDisposeCOROUTINE$0(_this__u8e3s4, onDispose, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this._this__u8e3s4__1 = _this__u8e3s4;
+    this.onDispose_1 = onDispose;
+  }
+  protoOf($awaitDisposeCOROUTINE$0).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(5);
+            this.set_state_rjd8d0_k$(1);
+            continue $sm;
+          case 1:
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_state_rjd8d0_k$(2);
+            var cancellable = new CancellableContinuationImpl(intercepted(this), 1);
+            cancellable.initCancellability_shqc60_k$();
+            suspendResult = returnIfSuspended(cancellable.getResult_fck196_k$(), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            this.tmp$ret$00__1 = suspendResult;
+            this.set_exceptionState_fex74n_k$(5);
+            this.set_state_rjd8d0_k$(3);
+            continue $sm;
+          case 3:
+            this.set_exceptionState_fex74n_k$(5);
+            this.onDispose_1();
+            return Unit_getInstance();
+          case 4:
+            this.set_exceptionState_fex74n_k$(5);
+            var t = this.get_exception_x0n6w6_k$();
+            this.onDispose_1();
+            throw t;
+          case 5:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 5) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function ProduceStateScopeImpl(state, coroutineContext) {
+    this.coroutineContext_1 = coroutineContext;
+    this.$$delegate_0__1 = state;
+  }
+  protoOf(ProduceStateScopeImpl).get_coroutineContext_115oqo_k$ = function () {
+    return this.coroutineContext_1;
+  };
+  protoOf(ProduceStateScopeImpl).set_value_v1vabv_k$ = function (_set____db54di) {
+    this.$$delegate_0__1.set_value_v1vabv_k$(_set____db54di);
+  };
+  protoOf(ProduceStateScopeImpl).get_value_j01efc_k$ = function () {
+    return this.$$delegate_0__1.get_value_j01efc_k$();
+  };
+  protoOf(ProduceStateScopeImpl).component1_7eebsc_k$ = function () {
+    return this.$$delegate_0__1.component1_7eebsc_k$();
+  };
+  protoOf(ProduceStateScopeImpl).component2_7eebsb_k$ = function () {
+    return this.$$delegate_0__1.component2_7eebsb_k$();
+  };
+  protoOf(ProduceStateScopeImpl).awaitDispose_z1s878_k$ = function (onDispose, $completion) {
+    var tmp = new $awaitDisposeCOROUTINE$0(this, onDispose, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  function produceState$slambda($producer, $result, resultContinuation) {
+    this.$producer_1 = $producer;
+    this.$result_1 = $result;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(produceState$slambda).invoke_d9fzmj_k$ = function ($this$LaunchedEffect, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$LaunchedEffect, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(produceState$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope_0) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(produceState$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = this.$producer_1(new ProduceStateScopeImpl(this.$result_1, this.$this$LaunchedEffect_1.get_coroutineContext_115oqo_k$()), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            return Unit_getInstance();
+          case 2:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 2) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(produceState$slambda).create_rcuf4x_k$ = function ($this$LaunchedEffect, completion) {
+    var i = new produceState$slambda(this.$producer_1, this.$result_1, completion);
+    i.$this$LaunchedEffect_1 = $this$LaunchedEffect;
+    return i;
+  };
+  protoOf(produceState$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope_0) : false) ? value : THROW_CCE(), completion);
+  };
+  function produceState$slambda_0($producer, $result, resultContinuation) {
+    var i = new produceState$slambda($producer, $result, resultContinuation);
+    var l = function ($this$LaunchedEffect, $completion) {
+      return i.invoke_d9fzmj_k$($this$LaunchedEffect, $completion);
+    };
+    l.$arity = 1;
+    return l;
   }
   function ReadOnlyComposable() {
   }
@@ -18174,19 +18371,18 @@
       new ReferentialEqualityPolicy();
     return ReferentialEqualityPolicy_instance;
   }
-  function State_0() {
+  function setValue(_this__u8e3s4, thisObj, property, value) {
+    _this__u8e3s4.set_value_v1vabv_k$(value);
+  }
+  function mutableStateListOf() {
+    return new SnapshotStateList();
   }
   function MutableState() {
   }
   function getValue(_this__u8e3s4, thisObj, property) {
     return _this__u8e3s4.get_value_j01efc_k$();
   }
-  function setValue(_this__u8e3s4, thisObj, property, value) {
-    _this__u8e3s4.set_value_v1vabv_k$(value);
-  }
-  function mutableStateOf(value, policy) {
-    policy = policy === VOID ? structuralEqualityPolicy() : policy;
-    return createSnapshotMutableState(value, policy);
+  function State_0() {
   }
   function _set_next__9r2xms($this, _set____db54di) {
     $this.next_1 = _set____db54di;
@@ -18312,8 +18508,9 @@
     // Inline function 'androidx.compose.runtime.SnapshotMutableStateImpl.<get-debuggerDisplayValue>.<anonymous>' call
     return current(this_0).value_1;
   };
-  function mutableStateListOf() {
-    return new SnapshotStateList();
+  function mutableStateOf(value, policy) {
+    policy = policy === VOID ? structuralEqualityPolicy() : policy;
+    return createSnapshotMutableState(value, policy);
   }
   function _get_map__e6co1h($this) {
     return $this.map_1;
@@ -36306,28 +36503,30 @@
   _.$_$.k = DisposableEffect_1;
   _.$_$.l = DisposableEffect;
   _.$_$.m = LaunchedEffect;
-  _.$_$.n = Recomposer;
-  _.$_$.o = RememberObserver;
-  _.$_$.p = SideEffect;
-  _.$_$.q = SkippableUpdater;
-  _.$_$.r = compositionLocalOf;
-  _.$_$.s = createCompositionCoroutineScope;
-  _.$_$.t = invalidApplier;
-  _.$_$.u = isTraceInProgress;
-  _.$_$.v = mutableStateListOf;
-  _.$_$.w = mutableStateOf;
-  _.$_$.x = sourceInformationMarkerEnd;
-  _.$_$.y = sourceInformationMarkerStart;
-  _.$_$.z = staticCompositionLocalOf;
-  _.$_$.a1 = traceEventEnd;
-  _.$_$.b1 = traceEventStart;
-  _.$_$.c1 = updateChangedFlags;
-  _.$_$.d1 = _SkippableUpdater___init__impl__4ft0t9;
-  _.$_$.e1 = _SkippableUpdater___get_composer__impl__6t7yne;
-  _.$_$.f1 = _Updater___init__impl__rbfxm8;
-  _.$_$.g1 = Updater__set_impl_v7kwss_0;
-  _.$_$.h1 = Companion_getInstance_13;
-  _.$_$.i1 = Companion_getInstance_0;
+  _.$_$.n = ProduceStateScope;
+  _.$_$.o = Recomposer;
+  _.$_$.p = RememberObserver;
+  _.$_$.q = SideEffect;
+  _.$_$.r = SkippableUpdater;
+  _.$_$.s = compositionLocalOf;
+  _.$_$.t = createCompositionCoroutineScope;
+  _.$_$.u = invalidApplier;
+  _.$_$.v = isTraceInProgress;
+  _.$_$.w = mutableStateListOf;
+  _.$_$.x = mutableStateOf;
+  _.$_$.y = produceState;
+  _.$_$.z = sourceInformationMarkerEnd;
+  _.$_$.a1 = sourceInformationMarkerStart;
+  _.$_$.b1 = staticCompositionLocalOf;
+  _.$_$.c1 = traceEventEnd;
+  _.$_$.d1 = traceEventStart;
+  _.$_$.e1 = updateChangedFlags;
+  _.$_$.f1 = _SkippableUpdater___init__impl__4ft0t9;
+  _.$_$.g1 = _SkippableUpdater___get_composer__impl__6t7yne;
+  _.$_$.h1 = _Updater___init__impl__rbfxm8;
+  _.$_$.i1 = Updater__set_impl_v7kwss_0;
+  _.$_$.j1 = Companion_getInstance_13;
+  _.$_$.k1 = Companion_getInstance_0;
   //endregion
   return _;
 }));

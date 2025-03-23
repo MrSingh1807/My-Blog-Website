@@ -89,10 +89,13 @@ public fun main() {
     val router = Router()
     com.varabyte.kobweb.core.init.initKobweb(router) { ctx ->
         ctx.router.register("/") { com.example.blogmultiplateform.pages.HomePage() }
-        ctx.router.register("/admin/home") { com.example.blogmultiplateform.pages.admin.HomeScreen()
-                }
+        ctx.router.register("/admin/create") {
+                com.example.blogmultiplateform.pages.admin.CreatePostPage() }
+        ctx.router.register("/admin/home") { com.example.blogmultiplateform.pages.admin.HomePage() }
         ctx.router.register("/admin/login") {
                 com.example.blogmultiplateform.pages.admin.LoginScreen() }
+        ctx.router.register("/admin/posts") {
+                com.example.blogmultiplateform.pages.admin.MyPostPage() }
 
     }
     router.addRouteInterceptor {
