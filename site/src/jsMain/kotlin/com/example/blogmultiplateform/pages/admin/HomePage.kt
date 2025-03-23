@@ -83,72 +83,8 @@ fun HomeScreen() {
                 .pointerEvents(PointerEvents.None)
         ) {
             AddButton()
-            HomeContent(joke = Joke(id = 2, joke = "Some random joke...."))
+            HomeContent(joke = Joke(id = 2, question = "Some random joke....Some random joke....Some random joke....Some random joke....Some random joke....", answer = "So Funney"))
         }
-    }
-}
-
-@Composable
-fun HomeContentOld(joke: Joke?) {
-    val breakpoint = rememberBreakpoint()
-    Box(
-        modifier = Modifier.fillMaxSize()
-            .padding { left(if (breakpoint > Breakpoint.MD) SIDE_PANEL_WIDTH.px else 0.px) },
-        contentAlignment = Alignment.Center
-    ) {
-        joke?.let {
-            Column(
-                modifier = Modifier.fillMaxSize()
-                    .padding { topBottom(50.px) },
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                if (joke.id != -1) {
-                    Image(
-                        modifier = Modifier.size(150.px)
-                            .margin { bottom(50.px) },
-                        src = Res.Image.laugh,
-                        description = "Laugh Image"
-                    )
-                }
-
-                if (joke.joke.contains("Q:")) {
-                    SpanText(
-                        text = joke.joke.split(":")[1],
-                        modifier = Modifier
-                            .margin { bottom(14.px) }
-                            .fillMaxWidth(60.percent)
-                            .textAlign(TextAlign.Center)
-                            .color(Theme.Secondary.rgb)
-                            .fontSize(28.px)
-                            .fontFamily(FONT_FAMILY.ROBOTO)
-                            .fontWeight(FontWeight.Bold)
-                    )
-
-                    SpanText(
-                        text = joke.joke.split(":").last(),
-                        modifier = Modifier.fillMaxWidth(60.percent)
-                            .textAlign(TextAlign.Center)
-                            .color(Theme.Secondary.rgb)
-                            .fontSize(20.px)
-                            .fontFamily(FONT_FAMILY.ROBOTO)
-                            .fontWeight(FontWeight.Normal)
-                    )
-                } else {
-                    SpanText(
-                        text = joke.joke.split(":")[1],
-                        modifier = Modifier
-                            .margin { bottom(14.px) }
-                            .fillMaxWidth(60.percent)
-                            .textAlign(TextAlign.Center)
-                            .color(Theme.Secondary.rgb)
-                            .fontSize(28.px)
-                            .fontFamily(FONT_FAMILY.ROBOTO)
-                            .fontWeight(FontWeight.Bold)
-                    )
-                }
-            }
-        } ?: println("Loading....")
     }
 }
 
@@ -157,6 +93,7 @@ fun BoxScope.HomeContent(joke: Joke?) {
     joke?.let {
         Column(
             modifier = Modifier
+                .fillMaxWidth(60.percent)
                 .align(Alignment.Center),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -170,12 +107,12 @@ fun BoxScope.HomeContent(joke: Joke?) {
                 )
             }
 
-            if (joke.joke.contains("Q:")) {
+            joke.question?.run {
                 SpanText(
-                    text = joke.joke.split(":")[1],
+                    text = this,
                     modifier = Modifier
                         .margin { bottom(14.px) }
-                        .fillMaxWidth(60.percent)
+                        .fillMaxWidth()
                         .textAlign(TextAlign.Center)
                         .color(Theme.Secondary.rgb)
                         .fontSize(28.px)
@@ -183,28 +120,20 @@ fun BoxScope.HomeContent(joke: Joke?) {
                         .fontWeight(FontWeight.Bold)
                 )
 
+            }
+
+            joke.answer?.let {
                 SpanText(
-                    text = joke.joke.split(":").last(),
-                    modifier = Modifier.fillMaxWidth(60.percent)
+                    text = it,
+                    modifier = Modifier.fillMaxWidth()
                         .textAlign(TextAlign.Center)
                         .color(Theme.Secondary.rgb)
                         .fontSize(20.px)
                         .fontFamily(FONT_FAMILY.ROBOTO)
                         .fontWeight(FontWeight.Normal)
                 )
-
-            } else {
-                SpanText(
-                    text = joke.joke.split(":").last(),
-                    modifier = Modifier
-                        .margin { bottom(14.px) }
-                        .textAlign(TextAlign.Center)
-                        .color(Theme.Secondary.rgb)
-                        .fontSize(28.px)
-                        .fontFamily(FONT_FAMILY.ROBOTO)
-                        .fontWeight(FontWeight.Bold)
-                )
             }
+
         }
     } ?: println("Loading....")
 }

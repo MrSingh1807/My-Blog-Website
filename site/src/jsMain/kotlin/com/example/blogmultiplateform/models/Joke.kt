@@ -5,5 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Joke(
     val id: Int,
-    val joke: String
+    val question: String? = null,
+    val answer : String? = null
+
 )

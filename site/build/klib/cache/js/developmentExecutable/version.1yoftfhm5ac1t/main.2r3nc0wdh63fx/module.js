@@ -182,13 +182,14 @@
   var Path = kotlin_com_varabyte_kobweb_compose_html_ext.$_$.i2;
   var SuspendFunction1 = kotlin_kotlin.$_$.ra;
   var initMetadataForCompanion = kotlin_kotlin.$_$.sb;
-  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.s1;
+  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.t1;
+  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
   var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.c;
   var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.l;
-  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
-  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n1;
-  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o1;
-  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.v1;
+  var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p;
+  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o1;
+  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p1;
+  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.w1;
   var objectCreate = kotlin_kotlin.$_$.uc;
   var getStringHashCode = kotlin_kotlin.$_$.pb;
   var initMetadataForClass = kotlin_kotlin.$_$.rb;
@@ -207,12 +208,10 @@
   var borderRadius = kotlin_com_varabyte_kobweb_kobweb_compose.$_$.o;
   var Companion_getInstance_8 = kotlin_com_varabyte_kobweb_compose_html_ext.$_$.k3;
   var pointerEvents = kotlin_com_varabyte_kobweb_kobweb_compose.$_$.n2;
-  var split = kotlin_kotlin.$_$.bf;
   var Companion_getInstance_9 = kotlin_com_varabyte_kobweb_compose_html_ext.$_$.m3;
   var textAlign = kotlin_com_varabyte_kobweb_kobweb_compose.$_$.v2;
   var Companion_getInstance_10 = kotlin_com_varabyte_kobweb_compose_html_ext.$_$.e3;
   var fontWeight = kotlin_com_varabyte_kobweb_kobweb_compose.$_$.g1;
-  var last = kotlin_kotlin.$_$.e8;
   var Companion_getInstance_11 = kotlin_org_jetbrains_compose_html_html_core.$_$.l;
   var Text_getInstance = kotlin_org_jetbrains_compose_html_html_core.$_$.c;
   var padding_0 = kotlin_com_varabyte_kobweb_kobweb_compose.$_$.l2;
@@ -233,8 +232,8 @@
   var getKClass = kotlin_kotlin.$_$.e;
   var arrayOf = kotlin_kotlin.$_$.ih;
   var createKType = kotlin_kotlin.$_$.b;
-  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.g2;
-  var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.y1;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.h2;
+  var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.z1;
   var encodeToByteArray = kotlin_kotlin.$_$.fe;
   var decodeToString = kotlin_kotlin.$_$.ce;
   var Exception = kotlin_kotlin.$_$.kg;
@@ -2708,16 +2707,22 @@
   }
   function $serializer() {
     $serializer_instance = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('com.example.blogmultiplateform.models.Joke', this, 2);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('com.example.blogmultiplateform.models.Joke', this, 3);
     tmp0_serialDesc.addElement_5pzumi_k$('id', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('joke', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('question', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('answer', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
   protoOf($serializer).serialize_jx3m4q_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 0, value.id_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.joke_1);
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 1) ? true : !(value.question_1 == null)) {
+      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 1, StringSerializer_getInstance(), value.question_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !(value.answer_1 == null)) {
+      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 2, StringSerializer_getInstance(), value.answer_1);
+    }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer).serialize_5ase3y_k$ = function (encoder, value) {
@@ -2730,33 +2735,40 @@
     var tmp3_bitMask0 = 0;
     var tmp4_local0 = 0;
     var tmp5_local1 = null;
-    var tmp6_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp6_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp6_input.decodeIntElement_941u6a_k$(tmp0_desc, 0);
+    var tmp6_local2 = null;
+    var tmp7_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    if (tmp7_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp6_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp7_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
+      tmp6_local2 = tmp7_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
+      tmp3_bitMask0 = tmp3_bitMask0 | 4;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp6_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp7_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp6_input.decodeIntElement_941u6a_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp6_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp7_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 1, StringSerializer_getInstance(), tmp5_local1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
+            break;
+          case 2:
+            tmp6_local2 = tmp7_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 2, StringSerializer_getInstance(), tmp6_local2);
+            tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp6_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return Joke_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
+    tmp7_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return Joke_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
   protoOf($serializer).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
@@ -2765,7 +2777,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [IntSerializer_getInstance(), StringSerializer_getInstance()];
+    return [IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance()), get_nullable(StringSerializer_getInstance())];
   };
   var $serializer_instance;
   function $serializer_getInstance() {
@@ -2773,48 +2785,66 @@
       new $serializer();
     return $serializer_instance;
   }
-  function Joke_init_$Init$(seen0, id, joke, serializationConstructorMarker, $this) {
-    if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance().descriptor_1);
+  function Joke_init_$Init$(seen0, id, question, answer, serializationConstructorMarker, $this) {
+    if (!(1 === (1 & seen0))) {
+      throwMissingFieldException(seen0, 1, $serializer_getInstance().descriptor_1);
     }
     $this.id_1 = id;
-    $this.joke_1 = joke;
+    if (0 === (seen0 & 2))
+      $this.question_1 = null;
+    else
+      $this.question_1 = question;
+    if (0 === (seen0 & 4))
+      $this.answer_1 = null;
+    else
+      $this.answer_1 = answer;
     return $this;
   }
-  function Joke_init_$Create$(seen0, id, joke, serializationConstructorMarker) {
-    return Joke_init_$Init$(seen0, id, joke, serializationConstructorMarker, objectCreate(protoOf(Joke)));
+  function Joke_init_$Create$(seen0, id, question, answer, serializationConstructorMarker) {
+    return Joke_init_$Init$(seen0, id, question, answer, serializationConstructorMarker, objectCreate(protoOf(Joke)));
   }
-  function Joke(id, joke) {
+  function Joke(id, question, answer) {
     Companion_getInstance_12();
+    question = question === VOID ? null : question;
+    answer = answer === VOID ? null : answer;
     this.id_1 = id;
-    this.joke_1 = joke;
+    this.question_1 = question;
+    this.answer_1 = answer;
   }
   protoOf(Joke).get_id_kntnx8_k$ = function () {
     return this.id_1;
   };
-  protoOf(Joke).get_joke_woop0o_k$ = function () {
-    return this.joke_1;
+  protoOf(Joke).get_question_jy1o6n_k$ = function () {
+    return this.question_1;
+  };
+  protoOf(Joke).get_answer_b1mrbb_k$ = function () {
+    return this.answer_1;
   };
   protoOf(Joke).component1_7eebsc_k$ = function () {
     return this.id_1;
   };
   protoOf(Joke).component2_7eebsb_k$ = function () {
-    return this.joke_1;
+    return this.question_1;
   };
-  protoOf(Joke).copy_xhhsuv_k$ = function (id, joke) {
-    return new Joke(id, joke);
+  protoOf(Joke).component3_7eebsa_k$ = function () {
+    return this.answer_1;
   };
-  protoOf(Joke).copy$default_vcjhrk_k$ = function (id, joke, $super) {
+  protoOf(Joke).copy_xqd1e3_k$ = function (id, question, answer) {
+    return new Joke(id, question, answer);
+  };
+  protoOf(Joke).copy$default_mbmbor_k$ = function (id, question, answer, $super) {
     id = id === VOID ? this.id_1 : id;
-    joke = joke === VOID ? this.joke_1 : joke;
-    return $super === VOID ? this.copy_xhhsuv_k$(id, joke) : $super.copy_xhhsuv_k$.call(this, id, joke);
+    question = question === VOID ? this.question_1 : question;
+    answer = answer === VOID ? this.answer_1 : answer;
+    return $super === VOID ? this.copy_xqd1e3_k$(id, question, answer) : $super.copy_xqd1e3_k$.call(this, id, question, answer);
   };
   protoOf(Joke).toString = function () {
-    return 'Joke(id=' + this.id_1 + ', joke=' + this.joke_1 + ')';
+    return 'Joke(id=' + this.id_1 + ', question=' + this.question_1 + ', answer=' + this.answer_1 + ')';
   };
   protoOf(Joke).hashCode = function () {
     var result = this.id_1;
-    result = imul(result, 31) + getStringHashCode(this.joke_1) | 0;
+    result = imul(result, 31) + (this.question_1 == null ? 0 : getStringHashCode(this.question_1)) | 0;
+    result = imul(result, 31) + (this.answer_1 == null ? 0 : getStringHashCode(this.answer_1)) | 0;
     return result;
   };
   protoOf(Joke).equals = function (other) {
@@ -2825,7 +2855,9 @@
     var tmp0_other_with_cast = other instanceof Joke ? other : THROW_CCE();
     if (!(this.id_1 === tmp0_other_with_cast.id_1))
       return false;
-    if (!(this.joke_1 === tmp0_other_with_cast.joke_1))
+    if (!(this.question_1 == tmp0_other_with_cast.question_1))
+      return false;
+    if (!(this.answer_1 == tmp0_other_with_cast.answer_1))
       return false;
     return true;
   };
@@ -3655,79 +3687,6 @@
       tmp0_safe_receiver.updateScope_t8jcf_k$(HomeScreen$lambda($changed));
     }
   }
-  function HomeContentOld(joke, $composer, $changed) {
-    var $composer_0 = $composer;
-    $composer_0 = $composer_0.startRestartGroup_lebv1i_k$(-939471923);
-    var $dirty = $changed;
-    if (($changed & 6) === 0)
-      $dirty = $dirty | ((($changed & 8) === 0 ? $composer_0.changed_ga7h3f_k$(joke) : $composer_0.changedInstance_s1wkiy_k$(joke)) ? 4 : 2);
-    if (!(($dirty & 3) === 2) || !$composer_0.get_skipping_3owdve_k$()) {
-      if (isTraceInProgress()) {
-        traceEventStart(-939471923, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.HomeContentOld (HomePage.kt:91)');
-      }
-      var breakpoint = rememberBreakpoint($composer_0, 0);
-      var tmp = fillMaxSize(Companion_getInstance_1());
-      $composer_0.startReplaceGroup_5hh8aj_k$(333068151);
-      // Inline function 'androidx.compose.runtime.cache' call
-      var this_0 = $composer_0;
-      var invalid = $composer_0.changed_ga7h3f_k$(breakpoint);
-      // Inline function 'kotlin.let' call
-      // Inline function 'kotlin.contracts.contract' call
-      // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-      var it = this_0.rememberedValue_4dg93v_k$();
-      var tmp_0;
-      if (invalid || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-        // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>' call
-        var value = HomeContentOld$lambda(breakpoint);
-        this_0.updateRememberedValue_l1wh71_k$(value);
-        tmp_0 = value;
-      } else {
-        tmp_0 = it;
-      }
-      var tmp_1 = tmp_0;
-      var tmp0_group = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
-      $composer_0.endReplaceGroup_ek144q_k$();
-      var tmp_2 = padding(tmp, tmp0_group);
-      var tmp_3 = Center_getInstance();
-      // Inline function 'kotlin.run' call
-      // Inline function 'kotlin.contracts.contract' call
-      // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>' call
-      var dispatchReceiver = rememberComposableLambda(-1447565049, true, HomeContentOld$lambda_0(joke), $composer_0, 54);
-      // Inline function 'androidx.compose.runtime.remember' call
-      var $composer_1 = $composer_0;
-      sourceInformationMarkerStart($composer_1, 1157296644, 'CC(remember)P(1):Composables.kt#9igjgp');
-      // Inline function 'androidx.compose.runtime.cache' call
-      var invalid_0 = $composer_1.changed_ga7h3f_k$(dispatchReceiver);
-      // Inline function 'kotlin.let' call
-      // Inline function 'kotlin.contracts.contract' call
-      // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-      var it_0 = $composer_1.rememberedValue_4dg93v_k$();
-      var tmp_4;
-      if (invalid_0 || it_0 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-        // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>' call
-        var value_0 = ComposableLambda$invoke$ref_25(dispatchReceiver);
-        $composer_1.updateRememberedValue_l1wh71_k$(value_0);
-        tmp_4 = value_0;
-      } else {
-        tmp_4 = it_0;
-      }
-      var tmp_5 = tmp_4;
-      var tmp0 = (tmp_5 == null ? true : !(tmp_5 == null)) ? tmp_5 : THROW_CCE();
-      sourceInformationMarkerEnd($composer_1);
-      Box(tmp_2, tmp_3, null, tmp0, $composer_0, 3072, 4);
-      if (isTraceInProgress()) {
-        traceEventEnd();
-      }
-    } else {
-      $composer_0.skipToGroupEnd_lh3zi2_k$();
-    }
-    var tmp1_safe_receiver = $composer_0.endRestartGroup_yxpjv9_k$();
-    if (tmp1_safe_receiver == null)
-      null;
-    else {
-      tmp1_safe_receiver.updateScope_t8jcf_k$(HomeContentOld$lambda_1(joke, $changed));
-    }
-  }
   function HomeContent(_this__u8e3s4, joke, $composer, $changed) {
     var $composer_0 = $composer;
     $composer_0 = $composer_0.startRestartGroup_lebv1i_k$(-158853771);
@@ -3738,7 +3697,7 @@
       $dirty = $dirty | ((($changed & 64) === 0 ? $composer_0.changed_ga7h3f_k$(joke) : $composer_0.changedInstance_s1wkiy_k$(joke)) ? 32 : 16);
     if (!(($dirty & 19) === 18) || !$composer_0.get_skipping_3owdve_k$()) {
       if (isTraceInProgress()) {
-        traceEventStart(-158853771, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.HomeContent (HomePage.kt:155)');
+        traceEventStart(-158853771, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.HomeContent (HomePage.kt:91)');
       }
       var tmp;
       if (joke == null) {
@@ -3746,7 +3705,7 @@
       } else {
         // Inline function 'kotlin.let' call
         // Inline function 'kotlin.contracts.contract' call
-        var tmp_0 = _this__u8e3s4.align_s6rwef_k$(Companion_getInstance_1(), Center_getInstance());
+        var tmp_0 = _this__u8e3s4.align_s6rwef_k$(fillMaxWidth(Companion_getInstance_1(), get_percent(60)), Center_getInstance());
         var tmp_1 = Center_getInstance_0();
         var tmp_2 = CenterHorizontally_getInstance();
         // Inline function 'kotlin.run' call
@@ -3765,7 +3724,7 @@
         var tmp_3;
         if (invalid || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
           // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous>.<anonymous>' call
-          var value = ComposableLambda$invoke$ref_26(dispatchReceiver);
+          var value = ComposableLambda$invoke$ref_24(dispatchReceiver);
           $composer_1.updateRememberedValue_l1wh71_k$(value);
           tmp_3 = value;
         } else {
@@ -3801,12 +3760,12 @@
       $dirty = $dirty | ($composer_0.changed_ga7h3f_k$(_this__u8e3s4) ? 4 : 2);
     if (!(($dirty & 3) === 2) || !$composer_0.get_skipping_3owdve_k$()) {
       if (isTraceInProgress()) {
-        traceEventStart(-2096302803, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.AddButton (HomePage.kt:213)');
+        traceEventStart(-2096302803, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.AddButton (HomePage.kt:142)');
       }
       var breakpoint = rememberBreakpoint($composer_0, 0);
       var context = rememberPageContext($composer_0, 0);
       var tmp = Companion_getInstance_1();
-      $composer_0.startReplaceGroup_5hh8aj_k$(-1632439056);
+      $composer_0.startReplaceGroup_5hh8aj_k$(-1632532144);
       // Inline function 'androidx.compose.runtime.cache' call
       var this_0 = $composer_0;
       var invalid = $composer_0.changed_ga7h3f_k$(breakpoint);
@@ -3827,7 +3786,7 @@
       var tmp0_group = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
       $composer_0.endReplaceGroup_ek144q_k$();
       var tmp_2 = pointerEvents(cursor(borderRadius(backgroundColor(size(_this__u8e3s4.align_s6rwef_k$(margin(tmp, tmp0_group), BottomEnd_getInstance()), breakpoint.compareTo_30rs7w_k$(Breakpoint_MD_getInstance()) > 0 ? get_px(80) : get_px(50)), Theme_Primary_getInstance().get_rgb_18ix0c_k$()), get_px(14)), Companion_getInstance_6().get_Pointer_m64vg4_k$()), Companion_getInstance_8().get_Auto_wnyn88_k$());
-      $composer_0.startReplaceGroup_5hh8aj_k$(-1632424477);
+      $composer_0.startReplaceGroup_5hh8aj_k$(-1632517565);
       // Inline function 'androidx.compose.runtime.cache' call
       var this_1 = $composer_0;
       var invalid_0 = $composer_0.changedInstance_s1wkiy_k$(context);
@@ -3878,7 +3837,7 @@
         traceEventStart(-390227069, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.ComposableSingletons$HomePageKt.lambda-1.<anonymous> (HomePage.kt:84)');
       }
       AddButton($this$Box, $composer_0, 14 & $dirty);
-      HomeContent($this$Box, new Joke(2, 'Some random joke....'), $composer_0, 14 & $dirty);
+      HomeContent($this$Box, new Joke(2, 'Some random joke....Some random joke....Some random joke....Some random joke....Some random joke....', 'So Funney'), $composer_0, 14 & $dirty);
       if (isTraceInProgress()) {
         traceEventEnd();
       }
@@ -3952,7 +3911,7 @@
     var $composer_0 = $composer;
     if (!(($changed & 17) === 16) || !$composer_0.get_skipping_3owdve_k$()) {
       if (isTraceInProgress()) {
-        traceEventStart(1690571367, $changed, -1, 'com.example.blogmultiplateform.pages.admin.ComposableSingletons$HomePageKt.lambda-3.<anonymous> (HomePage.kt:233)');
+        traceEventStart(1690571367, $changed, -1, 'com.example.blogmultiplateform.pages.admin.ComposableSingletons$HomePageKt.lambda-3.<anonymous> (HomePage.kt:162)');
       }
       var tmp0_modifier = color(size(Companion_getInstance_1(), get_px(32)), Colors_getInstance().get_White_ij46ow_k$());
       var tmp1_src = '/ic_create_plus.svg';
@@ -4001,234 +3960,11 @@
       return Unit_getInstance();
     };
   }
-  function HomeContentOld$lambda($breakpoint) {
-    return function ($this$padding) {
-      $this$padding.left_pqi2av_k$($breakpoint.compareTo_30rs7w_k$(Breakpoint_MD_getInstance()) > 0 ? get_px(250) : get_px(0));
-      return Unit_getInstance();
-    };
-  }
-  function HomeContentOld$lambda$lambda($this$padding) {
-    topBottom($this$padding, get_px(50));
-    return Unit_getInstance();
-  }
-  function HomeContentOld$lambda$lambda$lambda($this$margin) {
-    $this$margin.bottom_k4p8ql_k$(get_px(50));
-    return Unit_getInstance();
-  }
-  function HomeContentOld$lambda$lambda$lambda_0($this$margin) {
-    $this$margin.bottom_k4p8ql_k$(get_px(14));
-    return Unit_getInstance();
-  }
-  function HomeContentOld$lambda$lambda$lambda_1($this$margin) {
-    $this$margin.bottom_k4p8ql_k$(get_px(14));
-    return Unit_getInstance();
-  }
-  function HomeContentOld$lambda$lambda_0($joke) {
-    return function ($this$Column, $composer, $changed) {
-      var $composer_0 = $composer;
-      var tmp;
-      if (!(($changed & 17) === 16) || !$composer_0.get_skipping_3owdve_k$()) {
-        if (isTraceInProgress()) {
-          traceEventStart(719446647, $changed, -1, 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous> (HomePage.kt:105)');
-        }
-        $composer_0.startReplaceGroup_5hh8aj_k$(272000951);
-        if (!($joke.get_id_kntnx8_k$() === -1)) {
-          var tmp_0 = size(Companion_getInstance_1(), get_px(150));
-          $composer_0.startReplaceGroup_5hh8aj_k$(272005182);
-          // Inline function 'androidx.compose.runtime.cache' call
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it = $composer_0.rememberedValue_4dg93v_k$();
-          var tmp_1;
-          if (false || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value = HomeContentOld$lambda$lambda$lambda;
-            $composer_0.updateRememberedValue_l1wh71_k$(value);
-            tmp_1 = value;
-          } else {
-            tmp_1 = it;
-          }
-          var tmp_2 = tmp_1;
-          var tmp0_group = (tmp_2 == null ? true : !(tmp_2 == null)) ? tmp_2 : THROW_CCE();
-          $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp0_modifier = margin(tmp_0, tmp0_group);
-          var tmp1_src = '/laugh.png';
-          Image(tmp1_src, 'Laugh Image', tmp0_modifier, null, null, null, null, $composer_0, 54, 120);
-        }
-        $composer_0.endReplaceGroup_ek144q_k$();
-        if (contains($joke.get_joke_woop0o_k$(), 'Q:')) {
-          $composer_0.startReplaceGroup_5hh8aj_k$(-157539712);
-          var tmp_3 = split($joke.get_joke_woop0o_k$(), [':']).get_c1px32_k$(1);
-          var tmp_4 = Companion_getInstance_1();
-          $composer_0.startReplaceGroup_5hh8aj_k$(272017118);
-          // Inline function 'androidx.compose.runtime.cache' call
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it_0 = $composer_0.rememberedValue_4dg93v_k$();
-          var tmp_5;
-          if (false || it_0 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value_0 = HomeContentOld$lambda$lambda$lambda_0;
-            $composer_0.updateRememberedValue_l1wh71_k$(value_0);
-            tmp_5 = value_0;
-          } else {
-            tmp_5 = it_0;
-          }
-          var tmp_6 = tmp_5;
-          var tmp1_group = (tmp_6 == null ? true : !(tmp_6 == null)) ? tmp_6 : THROW_CCE();
-          $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp_7 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(margin(tmp_4, tmp1_group), get_percent(60)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(28)), ['ROBOTO']), Companion_getInstance_10().get_Bold_wnz5ke_k$());
-          SpanText(tmp_3, tmp_7, null, null, $composer_0, 0, 12);
-          var tmp_8 = last(split($joke.get_joke_woop0o_k$(), [':']));
-          var tmp_9 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(Companion_getInstance_1(), get_percent(60)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(20)), ['ROBOTO']), Companion_getInstance_10().get_Normal_22avww_k$());
-          SpanText(tmp_8, tmp_9, null, null, $composer_0, 0, 12);
-          $composer_0.endReplaceGroup_ek144q_k$();
-        } else {
-          $composer_0.startReplaceGroup_5hh8aj_k$(-156543093);
-          var tmp_10 = split($joke.get_joke_woop0o_k$(), [':']).get_c1px32_k$(1);
-          var tmp_11 = Companion_getInstance_1();
-          $composer_0.startReplaceGroup_5hh8aj_k$(272049726);
-          // Inline function 'androidx.compose.runtime.cache' call
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it_1 = $composer_0.rememberedValue_4dg93v_k$();
-          var tmp_12;
-          if (false || it_1 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value_1 = HomeContentOld$lambda$lambda$lambda_1;
-            $composer_0.updateRememberedValue_l1wh71_k$(value_1);
-            tmp_12 = value_1;
-          } else {
-            tmp_12 = it_1;
-          }
-          var tmp_13 = tmp_12;
-          var tmp2_group = (tmp_13 == null ? true : !(tmp_13 == null)) ? tmp_13 : THROW_CCE();
-          $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp_14 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(margin(tmp_11, tmp2_group), get_percent(60)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(28)), ['ROBOTO']), Companion_getInstance_10().get_Bold_wnz5ke_k$());
-          SpanText(tmp_10, tmp_14, null, null, $composer_0, 0, 12);
-          $composer_0.endReplaceGroup_ek144q_k$();
-        }
-        var tmp_15;
-        if (isTraceInProgress()) {
-          traceEventEnd();
-          tmp_15 = Unit_getInstance();
-        }
-        tmp = tmp_15;
-      } else {
-        $composer_0.skipToGroupEnd_lh3zi2_k$();
-        tmp = Unit_getInstance();
-      }
-      return Unit_getInstance();
-    };
-  }
-  function ComposableLambda$invoke$ref_24($boundThis) {
-    return function (p0, p1, p2) {
-      return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
-    };
-  }
-  function HomeContentOld$lambda_0($joke) {
-    return function ($this$Box, $composer, $changed) {
-      var $composer_0 = $composer;
-      var tmp;
-      if (!(($changed & 17) === 16) || !$composer_0.get_skipping_3owdve_k$()) {
-        if (isTraceInProgress()) {
-          traceEventStart(-1447565049, $changed, -1, 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous> (HomePage.kt:98)');
-        }
-        var tmp_0;
-        if ($joke == null) {
-          tmp_0 = null;
-        } else {
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          var tmp_1 = fillMaxSize(Companion_getInstance_1());
-          $composer_0.startReplaceGroup_5hh8aj_k$(62423874);
-          // Inline function 'androidx.compose.runtime.cache' call
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it = $composer_0.rememberedValue_4dg93v_k$();
-          var tmp_2;
-          if (false || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value = HomeContentOld$lambda$lambda;
-            $composer_0.updateRememberedValue_l1wh71_k$(value);
-            tmp_2 = value;
-          } else {
-            tmp_2 = it;
-          }
-          var tmp_3 = tmp_2;
-          var tmp0_group = (tmp_3 == null ? true : !(tmp_3 == null)) ? tmp_3 : THROW_CCE();
-          $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp_4 = padding(tmp_1, tmp0_group);
-          var tmp_5 = Center_getInstance_0();
-          var tmp_6 = CenterHorizontally_getInstance();
-          // Inline function 'kotlin.run' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-          var dispatchReceiver = rememberComposableLambda(719446647, true, HomeContentOld$lambda$lambda_0($joke), $composer_0, 54);
-          // Inline function 'androidx.compose.runtime.remember' call
-          var $composer_1 = $composer_0;
-          sourceInformationMarkerStart($composer_1, 1157296644, 'CC(remember)P(1):Composables.kt#9igjgp');
-          // Inline function 'androidx.compose.runtime.cache' call
-          var invalid = $composer_1.changed_ga7h3f_k$(dispatchReceiver);
-          // Inline function 'kotlin.let' call
-          // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it_0 = $composer_1.rememberedValue_4dg93v_k$();
-          var tmp_7;
-          if (invalid || it_0 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContentOld.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value_0 = ComposableLambda$invoke$ref_24(dispatchReceiver);
-            $composer_1.updateRememberedValue_l1wh71_k$(value_0);
-            tmp_7 = value_0;
-          } else {
-            tmp_7 = it_0;
-          }
-          var tmp_8 = tmp_7;
-          var tmp0 = (tmp_8 == null ? true : !(tmp_8 == null)) ? tmp_8 : THROW_CCE();
-          sourceInformationMarkerEnd($composer_1);
-          Column(tmp_4, tmp_5, tmp_6, null, tmp0, $composer_0, 24576, 8);
-          tmp_0 = Unit_getInstance();
-        }
-        if (tmp_0 == null) {
-          println('Loading....');
-        }
-        var tmp_9;
-        if (isTraceInProgress()) {
-          traceEventEnd();
-          tmp_9 = Unit_getInstance();
-        }
-        tmp = tmp_9;
-      } else {
-        $composer_0.skipToGroupEnd_lh3zi2_k$();
-        tmp = Unit_getInstance();
-      }
-      return Unit_getInstance();
-    };
-  }
-  function ComposableLambda$invoke$ref_25($boundThis) {
-    return function (p0, p1, p2) {
-      return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
-    };
-  }
-  function HomeContentOld$lambda_1($joke, $$changed) {
-    return function ($composer, $force) {
-      HomeContentOld($joke, $composer, updateChangedFlags($$changed | 1));
-      return Unit_getInstance();
-    };
-  }
   function HomeContent$lambda$lambda($this$margin) {
     $this$margin.bottom_k4p8ql_k$(get_px(50));
     return Unit_getInstance();
   }
   function HomeContent$lambda$lambda_0($this$margin) {
-    $this$margin.bottom_k4p8ql_k$(get_px(14));
-    return Unit_getInstance();
-  }
-  function HomeContent$lambda$lambda_1($this$margin) {
     $this$margin.bottom_k4p8ql_k$(get_px(14));
     return Unit_getInstance();
   }
@@ -4238,12 +3974,12 @@
       var tmp;
       if (!(($changed & 17) === 16) || !$composer_0.get_skipping_3owdve_k$()) {
         if (isTraceInProgress()) {
-          traceEventStart(-1900265755, $changed, -1, 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous> (HomePage.kt:163)');
+          traceEventStart(-1900265755, $changed, -1, 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous> (HomePage.kt:100)');
         }
-        $composer_0.startReplaceGroup_5hh8aj_k$(-725337501);
+        $composer_0.startReplaceGroup_5hh8aj_k$(-725414749);
         if (!($joke.get_id_kntnx8_k$() === -1)) {
           var tmp_0 = size(Companion_getInstance_1(), get_px(150));
-          $composer_0.startReplaceGroup_5hh8aj_k$(-725333626);
+          $composer_0.startReplaceGroup_5hh8aj_k$(-725410874);
           // Inline function 'androidx.compose.runtime.cache' call
           // Inline function 'kotlin.let' call
           // Inline function 'kotlin.contracts.contract' call
@@ -4266,11 +4002,16 @@
           Image(tmp1_src, 'Laugh Image', tmp0_modifier, null, null, null, null, $composer_0, 54, 120);
         }
         $composer_0.endReplaceGroup_ek144q_k$();
-        if (contains($joke.get_joke_woop0o_k$(), 'Q:')) {
-          $composer_0.startReplaceGroup_5hh8aj_k$(-1010294101);
-          var tmp_3 = split($joke.get_joke_woop0o_k$(), [':']).get_c1px32_k$(1);
+        var tmp2_safe_receiver = $joke.get_question_jy1o6n_k$();
+        $composer_0.startReplaceGroup_5hh8aj_k$(-725404969);
+        var tmp_3;
+        if (tmp2_safe_receiver == null) {
+          tmp_3 = null;
+        } else {
+          // Inline function 'kotlin.run' call
+          // Inline function 'kotlin.contracts.contract' call
           var tmp_4 = Companion_getInstance_1();
-          $composer_0.startReplaceGroup_5hh8aj_k$(-725322842);
+          $composer_0.startReplaceGroup_5hh8aj_k$(875150501);
           // Inline function 'androidx.compose.runtime.cache' call
           // Inline function 'kotlin.let' call
           // Inline function 'kotlin.contracts.contract' call
@@ -4278,7 +4019,7 @@
           var it_0 = $composer_0.rememberedValue_4dg93v_k$();
           var tmp_5;
           if (false || it_0 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
+            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
             var value_0 = HomeContent$lambda$lambda_0;
             $composer_0.updateRememberedValue_l1wh71_k$(value_0);
             tmp_5 = value_0;
@@ -4286,46 +4027,30 @@
             tmp_5 = it_0;
           }
           var tmp_6 = tmp_5;
-          var tmp1_group = (tmp_6 == null ? true : !(tmp_6 == null)) ? tmp_6 : THROW_CCE();
+          var tmp0_group_0 = (tmp_6 == null ? true : !(tmp_6 == null)) ? tmp_6 : THROW_CCE();
           $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp_7 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(margin(tmp_4, tmp1_group), get_percent(60)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(28)), ['ROBOTO']), Companion_getInstance_10().get_Bold_wnz5ke_k$());
-          SpanText(tmp_3, tmp_7, null, null, $composer_0, 0, 12);
-          var tmp_8 = last(split($joke.get_joke_woop0o_k$(), [':']));
-          var tmp_9 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(Companion_getInstance_1(), get_percent(60)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(20)), ['ROBOTO']), Companion_getInstance_10().get_Normal_22avww_k$());
-          SpanText(tmp_8, tmp_9, null, null, $composer_0, 0, 12);
-          $composer_0.endReplaceGroup_ek144q_k$();
+          var tmp_7 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(margin(tmp_4, tmp0_group_0)), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(28)), ['ROBOTO']), Companion_getInstance_10().get_Bold_wnz5ke_k$());
+          SpanText(tmp2_safe_receiver, tmp_7, null, null, $composer_0, 0, 12);
+          tmp_3 = Unit_getInstance();
+        }
+        $composer_0.endReplaceGroup_ek144q_k$();
+        var tmp3_safe_receiver = $joke.get_answer_b1mrbb_k$();
+        var tmp_8;
+        if (tmp3_safe_receiver == null) {
+          tmp_8 = null;
         } else {
-          $composer_0.startReplaceGroup_5hh8aj_k$(-1009380159);
-          var tmp_10 = last(split($joke.get_joke_woop0o_k$(), [':']));
-          var tmp_11 = Companion_getInstance_1();
-          $composer_0.startReplaceGroup_5hh8aj_k$(-725292762);
-          // Inline function 'androidx.compose.runtime.cache' call
           // Inline function 'kotlin.let' call
           // Inline function 'kotlin.contracts.contract' call
-          // Inline function 'androidx.compose.runtime.cache.<anonymous>' call
-          var it_1 = $composer_0.rememberedValue_4dg93v_k$();
-          var tmp_12;
-          if (false || it_1 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
-            // Inline function 'com.example.blogmultiplateform.pages.admin.HomeContent.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-            var value_1 = HomeContent$lambda$lambda_1;
-            $composer_0.updateRememberedValue_l1wh71_k$(value_1);
-            tmp_12 = value_1;
-          } else {
-            tmp_12 = it_1;
-          }
-          var tmp_13 = tmp_12;
-          var tmp2_group = (tmp_13 == null ? true : !(tmp_13 == null)) ? tmp_13 : THROW_CCE();
-          $composer_0.endReplaceGroup_ek144q_k$();
-          var tmp_14 = fontWeight(fontFamily(fontSize(color(textAlign(margin(tmp_11, tmp2_group), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(28)), ['ROBOTO']), Companion_getInstance_10().get_Bold_wnz5ke_k$());
-          SpanText(tmp_10, tmp_14, null, null, $composer_0, 0, 12);
-          $composer_0.endReplaceGroup_ek144q_k$();
+          var tmp_9 = fontWeight(fontFamily(fontSize(color(textAlign(fillMaxWidth(Companion_getInstance_1()), Companion_getInstance_9().get_Center_3arb0i_k$()), Theme_Secondary_getInstance().get_rgb_18ix0c_k$()), get_px(20)), ['ROBOTO']), Companion_getInstance_10().get_Normal_22avww_k$());
+          SpanText(tmp3_safe_receiver, tmp_9, null, null, $composer_0, 0, 12);
+          tmp_8 = Unit_getInstance();
         }
-        var tmp_15;
+        var tmp_10;
         if (isTraceInProgress()) {
           traceEventEnd();
-          tmp_15 = Unit_getInstance();
+          tmp_10 = Unit_getInstance();
         }
-        tmp = tmp_15;
+        tmp = tmp_10;
       } else {
         $composer_0.skipToGroupEnd_lh3zi2_k$();
         tmp = Unit_getInstance();
@@ -4333,7 +4058,7 @@
       return Unit_getInstance();
     };
   }
-  function ComposableLambda$invoke$ref_26($boundThis) {
+  function ComposableLambda$invoke$ref_24($boundThis) {
     return function (p0, p1, p2) {
       return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
     };
@@ -4439,7 +4164,7 @@
       var tmp_5;
       if (invalid || it_1 === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
         // Inline function 'com.example.blogmultiplateform.pages.admin.LoginScreen.<anonymous>.<anonymous>' call
-        var value_1 = ComposableLambda$invoke$ref_29(dispatchReceiver);
+        var value_1 = ComposableLambda$invoke$ref_27(dispatchReceiver);
         $composer_2.updateRememberedValue_l1wh71_k$(value_1);
         tmp_5 = value_1;
       } else {
@@ -4476,7 +4201,7 @@
       localStorage['userName'] = user.get_userName_ytepxb_k$();
     }
   }
-  function ComposableLambda$invoke$ref_27($boundThis) {
+  function ComposableLambda$invoke$ref_25($boundThis) {
     return function (p0, p1, p2) {
       return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
     };
@@ -4495,7 +4220,7 @@
   function ComposableSingletons$LoginScreenKt() {
     ComposableSingletons$LoginScreenKt_instance = this;
     var tmp = this;
-    tmp.lambda_1_r8sbbp_1 = ComposableLambda$invoke$ref_27(composableLambdaInstance(1843850736, false, ComposableSingletons$LoginScreenKt$lambda_1$lambda_y2n5l7));
+    tmp.lambda_1_r8sbbp_1 = ComposableLambda$invoke$ref_25(composableLambdaInstance(1843850736, false, ComposableSingletons$LoginScreenKt$lambda_1$lambda_y2n5l7));
   }
   protoOf(ComposableSingletons$LoginScreenKt).get_lambda_1_1fs5qa_k$ = function () {
     return this.lambda_1_r8sbbp_1;
@@ -4886,7 +4611,7 @@
       return Unit_getInstance();
     };
   }
-  function ComposableLambda$invoke$ref_28($boundThis) {
+  function ComposableLambda$invoke$ref_26($boundThis) {
     return function (p0, p1, p2) {
       return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
     };
@@ -4921,7 +4646,7 @@
         var tmp_2;
         if (invalid || it === Companion_getInstance_0().get_Empty_i9b85g_k$()) {
           // Inline function 'com.example.blogmultiplateform.pages.admin.LoginScreen.<anonymous>.<anonymous>.<anonymous>.<anonymous>' call
-          var value = ComposableLambda$invoke$ref_28(dispatchReceiver);
+          var value = ComposableLambda$invoke$ref_26(dispatchReceiver);
           $composer_1.updateRememberedValue_l1wh71_k$(value);
           tmp_2 = value;
         } else {
@@ -4944,7 +4669,7 @@
       return Unit_getInstance();
     };
   }
-  function ComposableLambda$invoke$ref_29($boundThis) {
+  function ComposableLambda$invoke$ref_27($boundThis) {
     return function (p0, p1, p2) {
       return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
     };
@@ -4997,7 +4722,7 @@
       tmp0_safe_receiver.updateScope_t8jcf_k$(PostScreen$lambda($changed));
     }
   }
-  function ComposableLambda$invoke$ref_30($boundThis) {
+  function ComposableLambda$invoke$ref_28($boundThis) {
     return function (p0, p1, p2) {
       return $boundThis.invoke_c9vvnb_k$(p0, p1, p2);
     };
@@ -5019,7 +4744,7 @@
   function ComposableSingletons$MyPostPageKt() {
     ComposableSingletons$MyPostPageKt_instance = this;
     var tmp = this;
-    tmp.lambda_1_r8sbbp_1 = ComposableLambda$invoke$ref_30(composableLambdaInstance(-210581167, false, ComposableSingletons$MyPostPageKt$lambda_1$lambda_c41m0f));
+    tmp.lambda_1_r8sbbp_1 = ComposableLambda$invoke$ref_28(composableLambdaInstance(-210581167, false, ComposableSingletons$MyPostPageKt$lambda_1$lambda_c41m0f));
   }
   protoOf(ComposableSingletons$MyPostPageKt).get_lambda_1_1fs5qa_k$ = function () {
     return this.lambda_1_r8sbbp_1;
