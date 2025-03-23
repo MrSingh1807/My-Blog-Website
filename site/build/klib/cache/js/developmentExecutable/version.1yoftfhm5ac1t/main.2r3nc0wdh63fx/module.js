@@ -3660,7 +3660,7 @@
     $composer_0 = $composer_0.startRestartGroup_lebv1i_k$(-939471923);
     var $dirty = $changed;
     if (($changed & 6) === 0)
-      $dirty = $dirty | ($composer_0.changed_ga7h3f_k$(joke) ? 4 : 2);
+      $dirty = $dirty | ((($changed & 8) === 0 ? $composer_0.changed_ga7h3f_k$(joke) : $composer_0.changedInstance_s1wkiy_k$(joke)) ? 4 : 2);
     if (!(($dirty & 3) === 2) || !$composer_0.get_skipping_3owdve_k$()) {
       if (isTraceInProgress()) {
         traceEventStart(-939471923, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.HomeContentOld (HomePage.kt:91)');
@@ -3735,7 +3735,7 @@
     if (($changed & 6) === 0)
       $dirty = $dirty | ($composer_0.changed_ga7h3f_k$(_this__u8e3s4) ? 4 : 2);
     if (($changed & 48) === 0)
-      $dirty = $dirty | ($composer_0.changed_ga7h3f_k$(joke) ? 32 : 16);
+      $dirty = $dirty | ((($changed & 64) === 0 ? $composer_0.changed_ga7h3f_k$(joke) : $composer_0.changedInstance_s1wkiy_k$(joke)) ? 32 : 16);
     if (!(($dirty & 19) === 18) || !$composer_0.get_skipping_3owdve_k$()) {
       if (isTraceInProgress()) {
         traceEventStart(-158853771, $dirty, -1, 'com.example.blogmultiplateform.pages.admin.HomeContent (HomePage.kt:155)');
@@ -3954,7 +3954,7 @@
       if (isTraceInProgress()) {
         traceEventStart(1690571367, $changed, -1, 'com.example.blogmultiplateform.pages.admin.ComposableSingletons$HomePageKt.lambda-3.<anonymous> (HomePage.kt:233)');
       }
-      var tmp0_modifier = color(size(Companion_getInstance_1(), get_px(24)), Colors_getInstance().get_White_ij46ow_k$());
+      var tmp0_modifier = color(size(Companion_getInstance_1(), get_px(32)), Colors_getInstance().get_White_ij46ow_k$());
       var tmp1_src = '/ic_create_plus.svg';
       Image(tmp1_src, 'Logo Image', tmp0_modifier, null, null, null, null, $composer_0, 54, 120);
       if (isTraceInProgress()) {

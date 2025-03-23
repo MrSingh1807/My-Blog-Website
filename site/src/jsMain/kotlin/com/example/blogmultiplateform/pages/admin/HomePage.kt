@@ -232,7 +232,7 @@ fun BoxScope.AddButton() {
         contentAlignment = Alignment.Center
     ) {
         Image(
-            modifier = Modifier.size(24.px).color(Colors.White),
+            modifier = Modifier.size(32.px).color(Colors.White),
             src = Res.Image.create_plus_icon,
             description = "Logo Image"
         )
